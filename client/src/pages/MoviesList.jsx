@@ -5,6 +5,7 @@ import api from '../api'
 import styled from 'styled-components'
 
 import 'react-table/react-table.css'
+// import '../style/styles.css'
 
 const Wrapper = styled.div`
     padding: 0 40px 40px 40px;
