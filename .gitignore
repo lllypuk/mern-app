@@ -1,7 +1,8 @@
 /.idea
 
-/reactapp/node_modules
-/reactapp/yarn.lock
+/client/build
+/client/node_modules
+/client/yarn.lock
 
 /server/node_modules
 /server/yarn.lock
