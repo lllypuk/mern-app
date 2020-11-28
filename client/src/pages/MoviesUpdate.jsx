@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import api from '../api'
 
 import styled from 'styled-components'
@@ -49,7 +49,7 @@ class MoviesUpdate extends Component {
 
     handleChangeInputName = async event => {
         const name = event.target.value
-        this.setState({ name })
+        this.setState({name})
     }
 
     handleChangeInputRating = async event => {
@@ -57,20 +57,20 @@ class MoviesUpdate extends Component {
             ? event.target.value
             : this.state.rating
 
-        this.setState({ rating })
+        this.setState({rating})
     }
 
     handleChangeInputTime = async event => {
         const time = event.target.value
-        this.setState({ time })
+        this.setState({time})
     }
 
     handleUpdateMovie = async () => {
-        const { id, name, rating, time } = this.state
+        const {id, name, rating, time} = this.state
         const arrayTime = time.split('/')
-        const payload = { name, rating, time: arrayTime }
+        const payload = {name, rating, time: arrayTime}
 
-        await api.updateMovieById(id, payload).then(res => {
+        await api.updateMovieById(id, payload).then(() => {
             window.alert(`Movie updated successfully`)
             this.setState({
                 name: '',
@@ -81,7 +81,7 @@ class MoviesUpdate extends Component {
     }
 
     componentDidMount = async () => {
-        const { id } = this.state
+        const {id} = this.state
         const movie = await api.getMovieById(id)
 
         this.setState({
@@ -92,7 +92,7 @@ class MoviesUpdate extends Component {
     }
 
     render() {
-        const { name, rating, time } = this.state
+        const {name, rating, time} = this.state
         return (
             <Wrapper>
                 <Title>Create Movie</Title>

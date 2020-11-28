@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import ReactTable from 'react-table'
 import api from '../api'
 
@@ -63,7 +63,7 @@ class MoviesList extends Component {
     }
 
     componentDidMount = async () => {
-        this.setState({ isLoading: true })
+        this.setState({isLoading: true})
 
         await api.getAllMovies().then(movies => {
             this.setState({
@@ -74,37 +74,37 @@ class MoviesList extends Component {
     }
 
     render() {
-      const { movies, isLoading } = this.state
-      console.log('TCL: MoviesList -> render -> movies', movies)
+        const {movies, isLoading} = this.state
+        console.log('TCL: MoviesList -> render -> movies', movies)
 
-      const columns = [
-          {
-              Header: 'ID',
-              accessor: '_id',
-              filterable: true,
-          },
-          {
-              Header: 'Name',
-              accessor: 'name',
-              filterable: true,
-          },
-          {
-              Header: 'Rating',
-              accessor: 'rating',
-              filterable: true,
-          },
-          {
-              Header: 'Time',
-              accessor: 'time',
-              Cell: props => <span>{props.value.join(' / ')}</span>,
-          },
+        const columns = [
+            {
+                Header: 'ID',
+                accessor: '_id',
+                filterable: true,
+            },
+            {
+                Header: 'Name',
+                accessor: 'name',
+                filterable: true,
+            },
+            {
+                Header: 'Rating',
+                accessor: 'rating',
+                filterable: true,
+            },
+            {
+                Header: 'Time',
+                accessor: 'time',
+                Cell: props => <span>{props.value.join(' / ')}</span>,
+            },
             {
                 Header: '',
                 accessor: '',
-                Cell: function(props) {
+                Cell: function (props) {
                     return (
                         <span>
-                            <DeleteMovie id={props.original._id} />
+                            <DeleteMovie id={props.original._id}/>
                         </span>
                     )
                 },
@@ -112,35 +112,35 @@ class MoviesList extends Component {
             {
                 Header: '',
                 accessor: '',
-                Cell: function(props) {
+                Cell: function (props) {
                     return (
                         <span>
-                            <UpdateMovie id={props.original._id} />
+                            <UpdateMovie id={props.original._id}/>
                         </span>
                     )
                 },
             },
-      ]
+        ]
 
-      let showTable = true
-      if (!movies.length) {
-          showTable = false
-      }
+        let showTable = true
+        if (!movies.length) {
+            showTable = false
+        }
 
-      return (
-          <Wrapper>
-              {showTable && (
-                  <ReactTable
-                      data={movies}
-                      columns={columns}
-                      loading={isLoading}
-                      defaultPageSize={10}
-                      showPageSizeOptions={true}
-                      minRows={0}
-                  />
-              )}
-          </Wrapper>
-      )
+        return (
+            <Wrapper>
+                {showTable && (
+                    <ReactTable
+                        data={movies}
+                        columns={columns}
+                        loading={isLoading}
+                        defaultPageSize={10}
+                        showPageSizeOptions={true}
+                        minRows={0}
+                    />
+                )}
+            </Wrapper>
+        )
     }
 }
 

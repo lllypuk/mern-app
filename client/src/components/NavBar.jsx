@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import styled from 'styled-components'
 
 import Logo from './Logo'
@@ -19,8 +19,8 @@ class NavBar extends Component {
         return (
             <Container>
                 <Nav>
-                    <Logo />
-                    <Links />
+                    <Logo/>
+                    <Links/>
                 </Nav>
             </Container>
         )

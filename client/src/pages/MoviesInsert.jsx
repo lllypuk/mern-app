@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import api from '../api'
 
 import styled from 'styled-components'
@@ -48,7 +48,7 @@ class MoviesInsert extends Component {
 
     handleChangeInputName = async event => {
         const name = event.target.value
-        this.setState({ name })
+        this.setState({name})
     }
 
     handleChangeInputRating = async event => {
@@ -56,20 +56,20 @@ class MoviesInsert extends Component {
             ? event.target.value
             : this.state.rating
 
-        this.setState({ rating })
+        this.setState({rating})
     }
 
     handleChangeInputTime = async event => {
         const time = event.target.value
-        this.setState({ time })
+        this.setState({time})
     }
 
     handleIncludeMovie = async () => {
-        const { name, rating, time } = this.state
+        const {name, rating, time} = this.state
         const arrayTime = time.split('/')
-        const payload = { name, rating, time: arrayTime }
+        const payload = {name, rating, time: arrayTime}
 
-        await api.insertMovie(payload).then(res => {
+        await api.insertMovie(payload).then(() => {
             window.alert(`Movie inserted successfully`)
             this.setState({
                 name: '',
@@ -80,7 +80,7 @@ class MoviesInsert extends Component {
     }
 
     render() {
-        const { name, rating, time } = this.state
+        const {name, rating, time} = this.state
         return (
             <Wrapper>
                 <Title>Create Movie</Title>

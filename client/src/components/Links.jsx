@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 
 const Collapse = styled.div.attrs({
-    className: 'collpase navbar-collapse',
+    className: 'collapse navbar-collapse',
 })``
 
 const List = styled.div.attrs({
@@ -11,7 +11,7 @@ const List = styled.div.attrs({
 })``
 
 const Item = styled.div.attrs({
-    className: 'collpase navbar-collapse',
+    className: 'collapse navbar-collapse',
 })``
 
 class Links extends Component {
@@ -19,7 +19,7 @@ class Links extends Component {
         return (
             <React.Fragment>
                 <Link to="/" className="navbar-brand">
-                    My first MERN Application
+                    Movies App
                 </Link>
                 <Collapse>
                     <List>
